@@ -62,7 +62,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.dev.Task_management.TaskManagementApplication</mainClass> <!-- Replace with your actual main class -->
+				</configuration>
 			</plugin>
 		</plugins>
+
+
 	</build>
 </project>
