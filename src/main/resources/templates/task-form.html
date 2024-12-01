@@ -1,0 +1,12 @@
+<form th:action="@{/tasks}" th:object="${task}" method="post">
+    <input type="hidden" th:field="*{id}" /> <!-- Champ caché pour gérer la mise à jour -->
+    <label for="title">Titre:</label>
+    <input type="text" id="title" th:field="*{title}" required />
+    <label for="description">Description:</label>
+    <textarea id="description" th:field="*{description}"></textarea>
+    <label for="dueDate">Date Limite:</label>
+    <input type="date" id="dueDate" th:field="*{dueDate}" />
+    <label for="completed">Statut:</label>
+    <input type="checkbox" id="completed" th:field="*{completed}" />
+    <button type="submit">Enregistrer</button>
+</form>
