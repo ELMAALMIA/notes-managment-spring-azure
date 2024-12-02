@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center p-4">
+<div class="w-full max-w-2xl bg-white shadow-2xl rounded-xl border border-blue-100">
+    <div class="bg-blue-600 text-white px-6 py-4 rounded-t-xl">
+        <h1 class="text-2xl font-bold text-center flex items-center justify-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Task Details
+        </h1>
+    </div>
+
+    <div class="p-6 space-y-6">
+        <!-- Title -->
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="font-semibold text-gray-700">Title:</div>
+                <div class="col-span-2 text-gray-900" th:text="${task.title}"></div>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="font-semibold text-gray-700">Description:</div>
+                <div class="col-span-2 text-gray-900" th:text="${task.description}"></div>
+            </div>
+        </div>
+
+        <!-- Due Date -->
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="font-semibold text-gray-700">Deadline:</div>
+                <div class="col-span-2 text-gray-900" th:text="${task.dueDate}"></div>
+            </div>
+        </div>
+
+        <!-- Completed -->
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="font-semibold text-gray-700">Completed:</div>
+                <div class="col-span-2 text-gray-900" th:text="${task.completed ? 'Yes' : 'No'}"></div>
+            </div>
+        </div>
+
+
+
+        <!-- Back Button -->
+        <div class="flex justify-center">
+            <a
+                    href="/"
+                    class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold flex items-center justify-center gap-2"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-8a1 1 0 10-2 0v2a1 1 0 102 0v-2a1 1 0 00-2 0z" clip-rule="evenodd" />
+                </svg>
+                Back to List
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
